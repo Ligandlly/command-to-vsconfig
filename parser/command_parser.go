@@ -42,17 +42,18 @@ func commandParserInit() {
 	}
 	staticData.predictionContextCache = antlr.NewPredictionContextCache()
 	staticData.serializedATN = []int32{
-		4, 1, 4, 31, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7, 4,
+		4, 1, 4, 32, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7, 4,
 		1, 0, 1, 0, 1, 0, 4, 0, 14, 8, 0, 11, 0, 12, 0, 15, 1, 1, 1, 1, 1, 2, 1,
-		2, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 3, 3, 27, 8, 3, 1, 4, 1, 4, 1, 4, 0, 0,
-		5, 0, 2, 4, 6, 8, 0, 0, 27, 0, 10, 1, 0, 0, 0, 2, 17, 1, 0, 0, 0, 4, 19,
-		1, 0, 0, 0, 6, 26, 1, 0, 0, 0, 8, 28, 1, 0, 0, 0, 10, 11, 3, 2, 1, 0, 11,
-		13, 3, 4, 2, 0, 12, 14, 3, 6, 3, 0, 13, 12, 1, 0, 0, 0, 14, 15, 1, 0, 0,
-		0, 15, 13, 1, 0, 0, 0, 15, 16, 1, 0, 0, 0, 16, 1, 1, 0, 0, 0, 17, 18, 5,
-		4, 0, 0, 18, 3, 1, 0, 0, 0, 19, 20, 5, 4, 0, 0, 20, 5, 1, 0, 0, 0, 21,
-		22, 5, 2, 0, 0, 22, 27, 3, 8, 4, 0, 23, 24, 5, 2, 0, 0, 24, 25, 5, 1, 0,
-		0, 25, 27, 3, 8, 4, 0, 26, 21, 1, 0, 0, 0, 26, 23, 1, 0, 0, 0, 27, 7, 1,
-		0, 0, 0, 28, 29, 5, 4, 0, 0, 29, 9, 1, 0, 0, 0, 2, 15, 26,
+		2, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 3, 3, 28, 8, 3, 1, 4, 1, 4, 1, 4,
+		0, 0, 5, 0, 2, 4, 6, 8, 0, 0, 29, 0, 10, 1, 0, 0, 0, 2, 17, 1, 0, 0, 0,
+		4, 19, 1, 0, 0, 0, 6, 27, 1, 0, 0, 0, 8, 29, 1, 0, 0, 0, 10, 11, 3, 2,
+		1, 0, 11, 13, 3, 4, 2, 0, 12, 14, 3, 6, 3, 0, 13, 12, 1, 0, 0, 0, 14, 15,
+		1, 0, 0, 0, 15, 13, 1, 0, 0, 0, 15, 16, 1, 0, 0, 0, 16, 1, 1, 0, 0, 0,
+		17, 18, 5, 4, 0, 0, 18, 3, 1, 0, 0, 0, 19, 20, 5, 4, 0, 0, 20, 5, 1, 0,
+		0, 0, 21, 22, 5, 2, 0, 0, 22, 28, 3, 8, 4, 0, 23, 24, 5, 2, 0, 0, 24, 25,
+		5, 1, 0, 0, 25, 28, 3, 8, 4, 0, 26, 28, 5, 2, 0, 0, 27, 21, 1, 0, 0, 0,
+		27, 23, 1, 0, 0, 0, 27, 26, 1, 0, 0, 0, 28, 7, 1, 0, 0, 0, 29, 30, 5, 4,
+		0, 0, 30, 9, 1, 0, 0, 0, 2, 15, 27,
 	}
 	deserializer := antlr.NewATNDeserializer(nil)
 	staticData.atn = deserializer.Deserialize(staticData.serializedATN)
@@ -593,7 +594,7 @@ func (p *CommandParser) Arg() (localctx IArgContext) {
 		}
 	}()
 
-	p.SetState(26)
+	p.SetState(27)
 	p.GetErrorHandler().Sync(p)
 	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 1, p.GetParserRuleContext()) {
 	case 1:
@@ -620,6 +621,13 @@ func (p *CommandParser) Arg() (localctx IArgContext) {
 		{
 			p.SetState(25)
 			p.Value()
+		}
+
+	case 3:
+		p.EnterOuterAlt(localctx, 3)
+		{
+			p.SetState(26)
+			p.Match(CommandParserKey)
 		}
 
 	}
@@ -717,7 +725,7 @@ func (p *CommandParser) Value() (localctx IValueContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(28)
+		p.SetState(29)
 		p.Match(CommandParserString_)
 	}
 

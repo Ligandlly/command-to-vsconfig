@@ -20,7 +20,7 @@ func getType(binName string) string {
 	case "gcc":
 		return "cpp"
 	default:
-		return "cpp"
+		return "python"
 	}
 }
 
@@ -37,13 +37,11 @@ func main() {
 	p.BuildParseTrees = true
 	tree := p.Command()
 
-	for _, arg := range tree.AllArg() {
-		println(arg.GetText())
-	}
-
 	argsList := []string{}
 	for _, item := range tree.AllArg() {
-		argsList = append(argsList, item.GetText())
+		key := item.Key().GetText()
+		value := item.Value().GetText()
+		argsList = append(argsList, key, value)
 	}
 
 	bin_name := tree.Bin().GetText()

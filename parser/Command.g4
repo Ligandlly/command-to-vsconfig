@@ -4,7 +4,7 @@ command: bin file arg+;
 
 bin: String;
 file: String;
-arg: Key value | Key '=' value;
+arg: Key value | Key '=' value | Key;
 
 Key: ('-' | '--') String;
 value: String;
