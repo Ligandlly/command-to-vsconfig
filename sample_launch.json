@@ -1,0 +1,105 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: mymodel",
+            "type": "python",
+            "request": "launch",
+            "program": "mymodel.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "cwd": "${workspaceFolder}/ensemble_model/ensemble_model_emb"
+        },
+        {
+            "args": [
+                "--device",
+                "cuda:7",
+                "--num_epochs",
+                "10000",
+                "--dataset",
+                "ml-1m",
+                "--save_dir",
+                "saved",
+                "--state_dict_path",
+                "saved/SASRec.epoch=10000.lr=0.001.layer=2.head=1.hidden=64.maxlen=200.reg_weight=0.0.pth",
+                "--inference_only",
+                "true",
+                "--maxlen",
+                "200",
+                "--hidden_units",
+                "64"
+            ],
+            "name": "Python: train_SASRec",
+            "type": "python",
+            "request": "launch",
+            "program": "train_SASRec.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "cwd": "${workspaceFolder}/base_model"
+        },
+        {
+            "args": [
+                "--device",
+                "cuda:3",
+                "--epochs",
+                "1",
+                "--datapath",
+                "dataset/movielens1m_m1",
+                "--save_dir",
+                "saved",
+                "--decay",
+                "1e-4",
+                "--lr",
+                "0.001",
+                "--layer",
+                "3",
+                "--seed",
+                "2020",
+                "--dataset",
+                "ml-1m",
+                "--topks",
+                "[10]",
+                "--recdim",
+                "64",
+                "--pop_reg_weight",
+                "0.0"
+            ],
+            "name": "Python: train_LightGCN",
+            "type": "python",
+            "request": "launch",
+            "program": "train_LightGCN.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "cwd": "${workspaceFolder}/base_model"
+        },
+        {
+            "args": [
+                "--config",
+                "./config/SimpleX_movielens1m_m1",
+                "--expid",
+                "SimpleX_movielens1m_m1",
+                "--gpu",
+                "6"
+            ],
+            "name": "Python: train_SimpleX",
+            "type": "python",
+            "request": "launch",
+            "program": "train_SimpleX.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "cwd": "${workspaceFolder}/base_model"
+        },
+        // {
+        //     "args": ["--config ./config/SimpleX_movielens1m_m1", "--expid SimpleX_movielens1m_m1 --gpu 6"],
+        //     "name": "Python: train_SimpleX",
+        //     "type": "python",
+        //     "request": "launch",
+        //     "program": "train_SimpleX.py",
+        //     "console": "integratedTerminal",
+        //     "justMyCode": false
+        // }
+    ]
+}
