@@ -40,8 +40,12 @@ func main() {
 	argsList := []string{}
 	for _, item := range tree.AllArg() {
 		key := item.Key().GetText()
-		value := item.Value().GetText()
-		argsList = append(argsList, key, value)
+		if item.Value() != nil {
+			value := item.Value().GetText()
+			argsList = append(argsList, key, value)
+		} else {
+			argsList = append(argsList, key)
+		}
 	}
 
 	bin_name := tree.Bin().GetText()
