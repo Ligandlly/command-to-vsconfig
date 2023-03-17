@@ -17,7 +17,7 @@ func getType(binName string) string {
 		return "python"
 	case "python3":
 		return "python"
-	case "gcc":
+	case "g++":
 		return "cpp"
 	default:
 		return "python"
