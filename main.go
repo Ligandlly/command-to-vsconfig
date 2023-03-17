@@ -2,9 +2,10 @@ package main
 
 import (
 	"bufio"
-	"command-to-vsconfig/parser"
 	"os"
 	"strings"
+
+	"github.com/Ligandlly/command-to-vsconfig/parser"
 
 	"encoding/json"
 

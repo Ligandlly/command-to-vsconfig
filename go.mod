@@ -1,4 +1,4 @@
-module command-to-vsconfig
+module github.com/Ligandlly/command-to-vsconfig
 
 go 1.20
 
