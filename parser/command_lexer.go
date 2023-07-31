@@ -1,13 +1,12 @@
-// Code generated from Command.g4 by ANTLR 4.12.0. DO NOT EDIT.
+// Code generated from Command.g4 by ANTLR 4.13.0. DO NOT EDIT.
 
 package parser
 
 import (
 	"fmt"
+	"github.com/antlr4-go/antlr/v4"
 	"sync"
 	"unicode"
-
-	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
 )
 
 // Suppress unused import error
@@ -22,43 +21,43 @@ type CommandLexer struct {
 	// TODO: EOF string
 }
 
-var commandlexerLexerStaticData struct {
+var CommandLexerLexerStaticData struct {
 	once                   sync.Once
 	serializedATN          []int32
-	channelNames           []string
-	modeNames              []string
-	literalNames           []string
-	symbolicNames          []string
-	ruleNames              []string
-	predictionContextCache *antlr.PredictionContextCache
+	ChannelNames           []string
+	ModeNames              []string
+	LiteralNames           []string
+	SymbolicNames          []string
+	RuleNames              []string
+	PredictionContextCache *antlr.PredictionContextCache
 	atn                    *antlr.ATN
 	decisionToDFA          []*antlr.DFA
 }
 
 func commandlexerLexerInit() {
-	staticData := &commandlexerLexerStaticData
-	staticData.channelNames = []string{
+	staticData := &CommandLexerLexerStaticData
+	staticData.ChannelNames = []string{
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN",
 	}
-	staticData.modeNames = []string{
+	staticData.ModeNames = []string{
 		"DEFAULT_MODE",
 	}
-	staticData.literalNames = []string{
+	staticData.LiteralNames = []string{
 		"", "'='",
 	}
-	staticData.symbolicNames = []string{
+	staticData.SymbolicNames = []string{
 		"", "", "Key", "Whitespace", "String",
 	}
-	staticData.ruleNames = []string{
+	staticData.RuleNames = []string{
 		"T__0", "Key", "Whitespace", "String",
 	}
-	staticData.predictionContextCache = antlr.NewPredictionContextCache()
+	staticData.PredictionContextCache = antlr.NewPredictionContextCache()
 	staticData.serializedATN = []int32{
 		4, 0, 4, 30, 6, -1, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 1,
 		0, 1, 0, 1, 1, 1, 1, 1, 1, 3, 1, 15, 8, 1, 1, 1, 1, 1, 1, 2, 4, 2, 20,
 		8, 2, 11, 2, 12, 2, 21, 1, 2, 1, 2, 1, 3, 4, 3, 27, 8, 3, 11, 3, 12, 3,
 		28, 0, 0, 4, 1, 1, 3, 2, 5, 3, 7, 4, 1, 0, 2, 2, 0, 9, 10, 32, 32, 7, 0,
-		34, 34, 39, 39, 45, 58, 65, 91, 93, 93, 95, 95, 97, 122, 32, 0, 1, 1, 0,
+		34, 34, 39, 44, 46, 58, 65, 91, 93, 93, 95, 95, 97, 122, 32, 0, 1, 1, 0,
 		0, 0, 0, 3, 1, 0, 0, 0, 0, 5, 1, 0, 0, 0, 0, 7, 1, 0, 0, 0, 1, 9, 1, 0,
 		0, 0, 3, 14, 1, 0, 0, 0, 5, 19, 1, 0, 0, 0, 7, 26, 1, 0, 0, 0, 9, 10, 5,
 		61, 0, 0, 10, 2, 1, 0, 0, 0, 11, 15, 5, 45, 0, 0, 12, 13, 5, 45, 0, 0,
@@ -84,7 +83,7 @@ func commandlexerLexerInit() {
 // NewCommandLexer(). You can call this function if you wish to initialize the static state ahead
 // of time.
 func CommandLexerInit() {
-	staticData := &commandlexerLexerStaticData
+	staticData := &CommandLexerLexerStaticData
 	staticData.once.Do(commandlexerLexerInit)
 }
 
@@ -93,13 +92,13 @@ func NewCommandLexer(input antlr.CharStream) *CommandLexer {
 	CommandLexerInit()
 	l := new(CommandLexer)
 	l.BaseLexer = antlr.NewBaseLexer(input)
-	staticData := &commandlexerLexerStaticData
-	l.Interpreter = antlr.NewLexerATNSimulator(l, staticData.atn, staticData.decisionToDFA, staticData.predictionContextCache)
-	l.channelNames = staticData.channelNames
-	l.modeNames = staticData.modeNames
-	l.RuleNames = staticData.ruleNames
-	l.LiteralNames = staticData.literalNames
-	l.SymbolicNames = staticData.symbolicNames
+	staticData := &CommandLexerLexerStaticData
+	l.Interpreter = antlr.NewLexerATNSimulator(l, staticData.atn, staticData.decisionToDFA, staticData.PredictionContextCache)
+	l.channelNames = staticData.ChannelNames
+	l.modeNames = staticData.ModeNames
+	l.RuleNames = staticData.RuleNames
+	l.LiteralNames = staticData.LiteralNames
+	l.SymbolicNames = staticData.SymbolicNames
 	l.GrammarFileName = "Command.g4"
 	// TODO: l.EOF = antlr.TokenEOF
 

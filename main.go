@@ -9,7 +9,7 @@ import (
 
 	"encoding/json"
 
-	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
+	"github.com/antlr4-go/antlr/v4"
 )
 
 func getType(binName string) string {
