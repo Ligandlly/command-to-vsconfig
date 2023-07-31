@@ -3,7 +3,6 @@ module github.com/Ligandlly/command-to-vsconfig
 go 1.20
 
 require (
-	github.com/antlr/antlr4/runtime/Go/antlr/v4 v4.0.0-20230305170008-8188dc5388df
 	github.com/antlr4-go/antlr/v4 v4.13.0
 )
 
